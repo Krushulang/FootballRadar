@@ -141,9 +141,15 @@ function teamUpdate(){
             leagueTeams = mlsClubs;
             break;
     };
+
+    const selectedTeam1 = team1.value;
+    const selectedTeam2 = team2.value;
+
     teamOptions = "";
     for(let i = 0; i < leagueTeams.length; i++){
+        if (leagueTeams[i] !== selectedTeam1 && leagueTeams[i] !== selectedTeam2) {
         teamOptions += "<option value=" + leagueTeams[i] + ">" + leagueTeams[i] + "</option>"
+        }
     }
     team1.innerHTML = teamOptions;
     team2.innerHTML = teamOptions;
