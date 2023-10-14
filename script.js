@@ -1,11 +1,6 @@
-var league = document.getElementById("league");
-var team1 = document.getElementById("team1")
-var team2 = document.getElementById("team2")
-var leagueTeams = ["default"];
-
 var laliga= ["Athletic Club","Ateletico de Madrid", "CA Osasuna", "Cadiz CF", "Deportivo Alaves", "FC Barcelona", "Getafe CF","Girona FC", "Granada CF", "Rayo Vallecano", "RC Celta","RCD Mallorca", "Real Betis", "Real Madrid", "Real Sociedad", "Sevilla FC", "UD Almeria", "UD Las Palmas"," Valencia CF", "Villarreal CF"]
 
-var EnglishPremireLeague = [
+var EnglishPremireLeage = [
     "Manchester City",
     "Arsenal",
     "Manchester United",
@@ -146,10 +141,14 @@ function teamUpdate(){
             leagueTeams = mlsClubs;
             break;
     };
+
     teamOptions = "";
     for(let i = 0; i < leagueTeams.length; i++){
-        teamOptions += "<option value=" + leagueTeams[i] + ">" + leagueTeams[i] + "</option>"
+        if (team1.value !== leagueTeams[i]) {
+            teamOptions += "<option value=" + leagueTeams[i] + ">" + leagueTeams[i] + "</option>";
+        }
     }
+    
     team1.innerHTML = teamOptions;
     team2.innerHTML = teamOptions;
 };
