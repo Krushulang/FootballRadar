@@ -148,6 +148,7 @@ function teamUpdate(){
             teamOptions += "<option value=" + leagueTeams[i] + ">" + leagueTeams[i] + "</option>";
         }
     }
+    
     team1.innerHTML = teamOptions;
     team2.innerHTML = teamOptions;
 };
