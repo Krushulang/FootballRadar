@@ -148,8 +148,22 @@ function teamUpdate(){
             teamOptions += "<option value=" + leagueTeams[i] + ">" + leagueTeams[i] + "</option>";
         }
     }
-    
+
     team1.innerHTML = teamOptions;
     team2.innerHTML = teamOptions;
 };
+
+function teamDropdownSwitch() {
+    const selectedTeam = team1.value;
+
+    team2.innerHTML = "";
+
+    for (let i = 0; i < leagueTeams.length; i++) {
+        if (selectedTeam !== leagueTeams[i]) {
+            team2.innerHTML += "<option value=" + leagueTeams[i] + ">" + leagueTeams[i] + "</option>";
+        }
+    }
+}
+
+team1.addEventListener('change', teamDropdownSwitch);
 
