@@ -3,6 +3,10 @@
     <title>Football Radar</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="static/script.js"></script> 
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+     
 </head>
 <html>
    <body>
@@ -13,8 +17,8 @@
             <div class="col-md-6 mx-auto text-center">
                 <label for="name" class="form-label fw-bold fs-5">Select 2 Teams to Evaluate</label>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
-                    <input type="text" class="form-control" id="team1" name="team1" style="max-width: 256px;">
-                    <input type="text" class="form-control" id="team2" name="team2" style="max-width: 256px;">
+                    <!-- <input type="text" class="form-control" id="team1" name="team1" style="max-width: 256px;">
+                    <input type="text" class="form-control" id="team2" name="team2" style="max-width: 256px;"> -->
                   </div>            
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
                   <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Submit</button>
@@ -22,25 +26,34 @@
             </div>
             <div class="League Selector">
               <label for="league" class="form-label fw-bold fs-5">Select a League</label>
-              <select class="form-select" id="league" name="league">
-                  <option value="premierleague">Premier League</option>
+              <select class="form-select" id="league" name="league" onchange="teamUpdate()">
+                  <option value="premierleague" selected>Premier League</option>
                   <option value="laliga">La Liga</option>
                   <option value="seriea">Serie A</option>
-                  <option value="League 1">League 1</option>
-                  <option value="Bundesliga">Bundesliga</option>
-                  <option value="MLS">MLS</option>
+                  <option value="league1">League 1</option>
+                  <option value="bundesliga">Bundesliga</option>
+                  <option value="mls">MLS</option>
 
               </select>
             
             </div>
             <div class="Team Dropdown">
-              <label for="team" class="form-label fw-bold fs-5">Select a Team</label>
-              <select class="form-select" id="team" name="team">
+              <label for="team1" class="form-label fw-bold fs-5">Select Team 1</label>
+              <select class="form-select" id="team1" name="team1">
+                  <!-- Options will be populated dynamically using JavaScript -->
+              </select>
+              
+            </div>
+            <div class="Team Dropdown">
+              <label for="team2" class="form-label fw-bold fs-5">Select Team 2</label>
+              <select class="form-select" id="team2" name="team2">
                   <!-- Options will be populated dynamically using JavaScript -->
               </select>
               
             </div>
         </form>
-     </main>      
+     </main>
+     <script src="static/script.js"></script>   
+     <script src="{{url_for('static', filename='script.js')}}"></script>   
    </body>
 </html>
